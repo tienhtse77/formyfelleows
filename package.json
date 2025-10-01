@@ -1,0 +1,21 @@
+{
+  "name": "formyfelleows-blog",
+  "version": "1.0.0",
+  "description": "A technical blog built with Eleventy",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "keywords": ["blog", "eleventy", "static-site"],
+  "author": "formyfelleows",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.7"
+  }
+}

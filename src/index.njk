@@ -1,0 +1,64 @@
+---
+layout: base.njk
+title: "Home"
+description: "A technical blog about software development, authentication, and technology insights."
+---
+
+<div class="hero">
+    <h1>Welcome to formyfelleows</h1>
+    <p>Just write - A technical blog exploring software development, authentication protocols, and technology insights.</p>
+</div>
+
+<section class="recent-posts">
+    <h2>Recent Posts</h2>
+    
+    {% if collections.posts.length > 0 %}
+        <div class="posts-grid">
+            {% for post in collections.posts.slice(0, 6) %}
+                <article class="post-card">
+                    <header class="post-card-header">
+                        <h3 class="post-card-title">
+                            <a href="{{ post.url }}">{{ post.data.title }}</a>
+                        </h3>
+                        <div class="post-card-meta">
+                            <time datetime="{{ post.date | date('Y-m-d') }}">
+                                {{ post.date | dateFilter }}
+                            </time>
+                            <span class="reading-time">{{ post.templateContent | readingTime }}</span>
+                        </div>
+                    </header>
+                    
+                    {% if post.data.description %}
+                    <p class="post-card-excerpt">{{ post.data.description }}</p>
+                    {% endif %}
+                    
+                    {% if post.data.tags %}
+                    <div class="post-card-tags">
+                        {% for tag in post.data.tags %}
+                            {% if tag != "post" %}
+                            <span class="tag">#{{ tag }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    <a href="{{ post.url }}" class="post-card-link">Read more →</a>
+                </article>
+            {% endfor %}
+        </div>
+        
+        {% if collections.posts.length > 6 %}
+        <div class="view-all">
+            <a href="/posts/" class="btn">View All Posts</a>
+        </div>
+        {% endif %}
+    {% else %}
+        <p>No posts yet. Check back soon!</p>
+    {% endif %}
+</section>
+
+<section class="about-preview">
+    <h2>About This Blog</h2>
+    <p>This blog focuses on technical topics in software development, with a particular interest in authentication protocols like OAuth 2.0, Keycloak, and modern web technologies. Each post aims to break down complex concepts into understandable explanations.</p>
+    <a href="/about/" class="btn btn-secondary">Learn More</a>
+</section>

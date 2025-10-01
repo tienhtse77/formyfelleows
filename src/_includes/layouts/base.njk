@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}{{ site.title or "formyfelleows" }}</title>
+    <meta name="description" content="{{ description or site.description or 'A technical blog about software development and technology' }}">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title or 'formyfelleows' }}">
+    <meta property="og:description" content="{{ description or site.description or 'A technical blog about software development and technology' }}">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title or 'formyfelleows' }}">
+    <meta property="twitter:description" content="{{ description or site.description or 'A technical blog about software development and technology' }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/">formyfelleows</a>
+                </h1>
+                <nav class="site-nav">
+                    <a href="/">Home</a>
+                    <a href="/about/">About</a>
+                    <a href="/posts/">Posts</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            {{ content | safe }}
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 formyfelleows. All rights reserved.</p>
+            <p>Built with <a href="https://www.11ty.dev/">Eleventy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

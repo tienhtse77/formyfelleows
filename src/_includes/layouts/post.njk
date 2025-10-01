@@ -1,0 +1,37 @@
+---
+layout: base.njk
+---
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ title }}</h1>
+        <div class="post-meta">
+            <time class="post-date" datetime="{{ date | date('Y-m-d') }}">
+                {{ date | dateFilter }}
+            </time>
+            {% if tags %}
+            <div class="post-tags">
+                {% for tag in tags %}
+                    {% if tag != "post" %}
+                    <span class="tag">#{{ tag }}</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+            <span class="reading-time">{{ content | readingTime }}</span>
+        </div>
+        {% if description %}
+        <p class="post-description">{{ description }}</p>
+        {% endif %}
+    </header>
+
+    <div class="post-content">
+        {{ content | safe }}
+    </div>
+
+    <footer class="post-footer">
+        <div class="post-nav">
+            <p>Thank you for reading!</p>
+        </div>
+    </footer>
+</article>
