@@ -1,20 +1,13 @@
 {
   "version": 2,
-  "name": "formyfelleows-blog",
   "buildCommand": "npm run build",
   "outputDirectory": "_site",
   "installCommand": "npm install",
-  "framework": null,
-  "public": false,
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/css/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -23,7 +16,7 @@
       ]
     },
     {
-      "source": "/*.html",
+      "source": "/(.*\\.html)",
       "headers": [
         {
           "key": "Cache-Control",
