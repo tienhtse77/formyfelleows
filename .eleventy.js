@@ -23,8 +23,23 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  // Create a collection for blog posts
+  // Create a collection for blog posts (exclude drafts in production)
   eleventyConfig.addCollection("posts", function(collectionApi) {
+    const isDevelopment = process.env.NODE_ENV !== 'production';
+    
+    return collectionApi.getFilteredByGlob("src/posts/*.md")
+      .filter(function(item) {
+        // In development, show all posts including drafts
+        // In production, only show non-draft posts
+        return isDevelopment || !item.data.draft;
+      })
+      .sort(function(a, b) {
+        return b.date - a.date; // Sort by date, newest first
+      });
+  });
+
+  // Create a collection for all posts including drafts (for development)
+  eleventyConfig.addCollection("allPosts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md").sort(function(a, b) {
       return b.date - a.date; // Sort by date, newest first
     });

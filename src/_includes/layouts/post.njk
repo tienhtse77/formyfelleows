@@ -4,6 +4,11 @@ layout: base.njk
 
 <article class="post">
     <header class="post-header">
+        {% if draft %}
+        <div class="draft-banner">
+            <strong>🚧 DRAFT POST</strong> - This post is not published and only visible in development mode
+        </div>
+        {% endif %}
         <h1 class="post-title">{{ title }}</h1>
         <div class="post-meta">
             <time class="post-date" datetime="{{ date | date('Y-m-d') }}">

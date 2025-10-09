@@ -2,6 +2,7 @@
 title: "What is OAuth 2.0?"
 date: 2025-01-01
 layout: post.njk
+draft: true
 tags: 
   - post
   - authentication

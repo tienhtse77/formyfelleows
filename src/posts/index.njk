@@ -7,8 +7,11 @@ description: "Complete archive of all blog posts on formyfelleows"
 <div class="posts-archive">
     {% if collections.posts.length > 0 %}
         {% for post in collections.posts %}
-            <article class="archive-post">
+            <article class="archive-post{% if post.data.draft %} archive-post-draft{% endif %}">
                 <header class="archive-post-header">
+                    {% if post.data.draft %}
+                    <div class="draft-indicator-archive">🚧 DRAFT</div>
+                    {% endif %}
                     <h3 class="archive-post-title">
                         <a href="{{ post.url }}">{{ post.data.title }}</a>
                     </h3>

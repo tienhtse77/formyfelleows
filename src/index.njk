@@ -15,8 +15,11 @@ description: "A technical blog about software development, authentication, and t
     {% if collections.posts.length > 0 %}
         <div class="posts-grid">
             {% for post in collections.posts.slice(0, 6) %}
-                <article class="post-card">
+                <article class="post-card{% if post.data.draft %} post-card-draft{% endif %}">
                     <header class="post-card-header">
+                        {% if post.data.draft %}
+                        <div class="draft-indicator">🚧 DRAFT</div>
+                        {% endif %}
                         <h3 class="post-card-title">
                             <a href="{{ post.url }}">{{ post.data.title }}</a>
                         </h3>

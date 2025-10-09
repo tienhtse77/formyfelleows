@@ -197,6 +197,24 @@ a:hover {
     padding: var(--spacing-xl);
     transition: all 0.3s ease;
     box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.post-card-draft {
+    border-color: #fbbf24;
+    background-color: #fefbf3;
+}
+
+.draft-indicator {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background-color: #fbbf24;
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 .post-card:hover {
@@ -257,6 +275,18 @@ a:hover {
 .post {
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* Draft Banner */
+.draft-banner {
+    background-color: #fef3cd;
+    border: 1px solid #fbbf24;
+    color: #92400e;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    font-weight: 600;
 }
 
 .post-header {
@@ -392,6 +422,27 @@ a:hover {
 .archive-post {
     padding: var(--spacing-xl) 0;
     border-bottom: 1px solid var(--color-border);
+    position: relative;
+}
+
+.archive-post-draft {
+    background-color: #fefbf3;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid #fbbf24;
+}
+
+.draft-indicator-archive {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background-color: #fbbf24;
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 .archive-post:last-child {
