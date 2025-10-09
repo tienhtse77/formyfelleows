@@ -2,6 +2,14 @@
 layout: base.njk
 ---
 
+{# In production, redirect draft posts or show 404 #}
+{% if env.isProduction and draft %}
+<div class="error-page">
+    <h1>404 - Page Not Found</h1>
+    <p>The page you're looking for doesn't exist or is not yet published.</p>
+    <p><a href="/">← Back to Home</a></p>
+</div>
+{% else %}
 <article class="post">
     <header class="post-header">
         {% if draft %}
@@ -40,3 +48,4 @@ layout: base.njk
         </div>
     </footer>
 </article>
+{% endif %}

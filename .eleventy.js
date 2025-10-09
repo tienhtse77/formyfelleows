@@ -25,13 +25,19 @@ module.exports = function(eleventyConfig) {
 
   // Create a collection for blog posts (exclude drafts in production)
   eleventyConfig.addCollection("posts", function(collectionApi) {
-    const isDevelopment = process.env.NODE_ENV !== 'production';
+    // Check multiple ways to detect production environment
+    const isProduction = process.env.NODE_ENV === 'production' || 
+                        process.env.VERCEL_ENV === 'production' ||
+                        process.env.CONTEXT === 'production';
     
     return collectionApi.getFilteredByGlob("src/posts/*.md")
       .filter(function(item) {
+        // In production, exclude drafts
         // In development, show all posts including drafts
-        // In production, only show non-draft posts
-        return isDevelopment || !item.data.draft;
+        if (isProduction) {
+          return !item.data.draft;
+        }
+        return true; // Show all posts in development
       })
       .sort(function(a, b) {
         return b.date - a.date; // Sort by date, newest first
