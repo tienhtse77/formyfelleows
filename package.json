@@ -6,7 +6,8 @@
     "build": "eleventy",
     "serve": "eleventy --serve",
     "start": "eleventy --serve",
-    "debug": "DEBUG=Eleventy* eleventy"
+    "debug": "DEBUG=Eleventy* eleventy",
+    "new": "node scripts/new-post.js"
   },
   "keywords": ["blog", "eleventy", "static-site"],
   "author": "formyfelleows",
