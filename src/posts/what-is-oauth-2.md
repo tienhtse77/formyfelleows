@@ -52,4 +52,4 @@ You can map a couple of things into OAuth 2.0 components:
 - **Client**: The third-party application requesting access
 - **Resource Owner**: The user who owns the data
 
-*[This post appears to be incomplete - looking forward to the continuation!]*
+## Resource
