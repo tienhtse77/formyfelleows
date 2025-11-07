@@ -53,6 +53,7 @@ I'm now reading a book to get my answers
 Still reading it TT
 Reading it now
 Still reading it :D
+Looks like a reading tracker now! I'll finish this in the weekend!
 
 ## Conclusion
 
