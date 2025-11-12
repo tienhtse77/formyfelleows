@@ -57,6 +57,7 @@ Looks like a reading tracker now! I'll finish this in the weekend!
 Reading it now!
 Still there!
 Not much progress TT
+I'll finish this this weekend!
 
 ## Conclusion
 
